@@ -41,4 +41,4 @@ India. His website is here. Go check out his blogs. Links-
         <span class="fa-brands fa-5x fa-github" ></span>
       </a>
      
-    </div>
+</div>

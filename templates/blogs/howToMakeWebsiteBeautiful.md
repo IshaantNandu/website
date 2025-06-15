@@ -93,66 +93,64 @@ If you like my website's cursor, here's the code.
  <label for="zipTime">Zip Time (time it takes for the balls stay put)</label>
 <input type="range" id="zipTime" name="zipTime" min="0.8" max="0.1" />
 
-```js
-const style = document.createElement('style');
-style.textContent = `
-.circle {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    position: fixed;
-    background-color:#FFFFFF;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999999;
-}`;
-document.head.appendChild(style);
-for (let i = 0; i < 49; i++) {
-    const circle = document.createElement('div');
-    circle.className = 'circle';
-    document.body.insertBefore(circle, document.body.firstChild);
-}
+<div class="js highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;style&#39;</span><span class="p">);</span>
+<span class="nx">style</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+<span class="sb">.circle {</span>
+<span class="sb">    height: 24px;</span>
+<span class="sb">    width: 24px;</span>
+<span class="sb">    border-radius: 50%;</span>
+<span class="sb">    position: fixed;</span>
+<span class="sb">    background-color:#FFFFFF;</span>
+<span class="sb">    top: 0;</span>
+<span class="sb">    left: 0;</span>
+<span class="sb">    pointer-events: none;</span>
+<span class="sb">    z-index: 99999999;</span>
+<span class="sb">}`</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">49</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">circle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">circle</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;circle&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">circle</span><span class="p">,</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span>
+<span class="p">}</span>
 
-const coords = { x: 0, y: 0 };
-const circles = document.querySelectorAll(".circle");
+<span class="kd">const</span><span class="w"> </span><span class="nx">coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">circles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;.circle&quot;</span><span class="p">);</span>
 
 
-circles.forEach(function (circle, index) {
-  circle.x = 0;
-  circle.y = 0;
-})
+<span class="nx">circles</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">circle</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">circle</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">circle</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="p">})</span>
 
-window.addEventListener("mousemove", function(e) {
-  coords.x = e.clientX;
-  coords.y = e.clientY;
-});
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mousemove&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">coords</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">coords</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">;</span>
+<span class="p">});</span>
 
-function animateCircles() {
-  let x = coords.x;
-  let y = coords.y;
+<span class="kd">function</span><span class="w"> </span><span class="nx">animateCircles</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">coords</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">coords</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
 
-  circles.forEach(function (circle, index) {
-    circle.style.left = x - xOffset + "px";
-    circle.style.top = y - yOffset + "px";
+<span class="w">  </span><span class="nx">circles</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">circle</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">circle</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">xOffset</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;px&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">circle</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">yOffset</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;px&quot;</span><span class="p">;</span>
 
-    // Use transform for scaling
-    circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+<span class="w">    </span><span class="c1">// Use transform for scaling</span>
+<span class="w">    </span><span class="nx">circle</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`scale(</span><span class="si">${</span><span class="p">(</span><span class="nx">circles</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">circles</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
 
-    circle.x = x;
-    circle.y = y;
+<span class="w">    </span><span class="nx">circle</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">circle</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
 
-    const nextCircle = circles[index + 1] || circles[0];
-    x += (nextCircle.x - x) * zipTime;
-    y += (nextCircle.y - y) * zipTime;
-  });
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">nextCircle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">circles</span><span class="p">[</span><span class="nx">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">circles</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="nx">nextCircle</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">zipTime</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="nx">nextCircle</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">zipTime</span><span class="p">;</span>
+<span class="w">  </span><span class="p">});</span>
 
-  requestAnimationFrame(animateCircles);
-}
+<span class="w">  </span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animateCircles</span><span class="p">);</span>
+<span class="p">}</span>
 
-animateCircles();
-```
-
+<span class="nx">animateCircles</span><span class="p">();</span>
+</code></pre></div>
 <script>
 
 const colorInput = document.querySelector("input[type=color]");
