@@ -12,4 +12,3 @@ echo "✓ Commit successful with message: \"$commit_message\""
 git push -u origin main
 
 sudo systemctl restart website 
-sudo systemctl status website 

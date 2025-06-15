@@ -50,4 +50,4 @@ The way this opamp works (other opamps require a different circuit) is that with
 
 ## Schematic 3 
 ![Schematic 3](/static/images/schemdist3.png){.schem}
-This is the most fun part- choosing clipping diodes. Some are like chocolate, while others are like coffee or vanilla. Like [stated above,](#understand)
+This is the most fun part- choosing clipping diodes. Some are like chocolate, while others are like coffee or vanilla. Like [stated above,](#understand) these

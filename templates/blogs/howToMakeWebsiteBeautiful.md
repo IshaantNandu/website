@@ -158,9 +158,9 @@ const codeBlockElement = document.querySelectorAll('pre')[3];
 
 colorInput.addEventListener('change', function() {
     console.assert("Ditro");
-    const codeBlock = codeBlockElement.textContent;
+    const codeBlock = codeBlockElement.innerHTML;
     const color = colorInput.value;
-    codeBlockElement.textContent = codeBlock.replace('#FFFFFF', color);
+    codeBlockElement.innerHTML = codeBlock.replace('#FFFFFF', color);
 });
 
 </script>
