@@ -1,0 +1,11 @@
+*.jpeg
+*.jpg
+*.gif
+*.png
+/lib
+/lib64
+/__pycache__/
+*.pyc
+/include
+/bin
+pyvenv.cfg

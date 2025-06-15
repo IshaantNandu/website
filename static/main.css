@@ -1,0 +1,588 @@
+:root {
+    --heading-size: clamp(1rem, 2rem, 2.5em);
+    --body: clamp(1rem, 1.5rem, 2.5rem);
+    --normalFont: "Space Grotesk", system-ui;
+    --headingFont: "Boldonse", system-ui;
+    --headermargin: clamp(10px, 40%, 43px);
+    --bdradius: calc(2rem);
+    --violet: #8876fe;
+    --indigo: #622aff;
+    --grape: #6e21e6;
+    --beetroot: #25063a;
+    --plum: #8d1287;
+    --azalea: #e71ee6;
+    --magenta: #dd04d1;
+    --tomato: #f63e54;
+    --guava: #fb4d66;
+    --tangelo: #ff3e17;
+    --coral: #f95c30;
+    --persimmon: #e94b1b;
+    --pumpkin: #e2620c;
+    --orange: #e66702;
+    --lemon: #ffe100;
+    --neon-green: #e0ff17;
+    --verdant: #29d246;
+    --bright-green: #00d436;
+    --new-green: #13be54;
+    --avocado: #73b439;
+    --green: #0c9d46;
+    --blue-green: #26c2ac;
+    --peacock-green: #14b1a1;
+    --sea-green: rgb(9, 155, 157);
+    --teal-green: #2b9ca1;
+    --aqua: #039e8f;
+    --teal: #049cb7;
+    --pool-blue: #00c2ee;
+    --azure: #027fff;
+    --sparkle-blue: #007aff;
+    --denim: #0056d2;
+    --cobalt: #5451fb;
+    --sapphire: #3d44c3;
+    --night: #23466c;
+    --ultramarine: #0d1387;
+}
+.links {
+    display: block;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 24px;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .hideAnim {
+        transition: all 0.8s ease-in-out;
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+    }
+}
+
+.linkarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.linkarea a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 1s ease;
+}
+.capo {
+    display: block;
+    background-color: #676767;
+}
+
+.linkarea a:hover {
+    background: #6f6f6f;
+}
+
+::selection {
+    color: black;
+    background: var(--indigo);
+}
+::-moz-selection {
+    color: black;
+    background: var(--indigo);
+}
+a::selection {
+    color: var(--neon-green);
+    background: var(--indigo);
+}
+a::-moz-selection {
+    color: var(--neon-green);
+    background: var(--indigo);
+}
+
+* {
+    text-align: center;
+    caret-color: rgb(224, 255, 23);
+}
+
+body {
+    background: black;
+    color: white;
+    scroll-behavior: smooth;
+    padding: 0;
+    font-family: var(--normalFont), sans-serif;
+    font-size: var(--body);
+    font-weight: normal;
+    line-height: 1.5em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-wrap: balance;
+}
+
+math {
+    font-family: "DM Serif Display", serif;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    transition: all 1s ease;
+    color: var(--neon-green);
+}
+ul,
+li,
+dl {
+    list-style-position: inside; /* This will place the bullets inside of the content box */
+}
+blockquote {
+    min-height: 2em;
+    border-radius: 4px;
+    width: fit-content;
+    margin: 0 auto;
+    padding-left: 5px;
+    border-left: 5px solid var(--sparkle-blue);
+    background: var(--teal);
+}
+
+header {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #676767;
+    background-repeat: repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--headingFont);
+    font-size: var(--heading-size);
+    line-height: 2em;
+}
+
+em,
+i,
+u,
+strong,
+b,
+.gradient {
+    background: linear-gradient(94deg, #0090f7, #ba62fc, #f2416b, #f55600);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: bold;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+footer {
+    padding: 0px;
+    background-color: #abbaba;
+    margin-top: auto;
+    width: 100vw;
+    animation: none;
+}
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: #29d246; /* Set the color here */
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999999999999999; /* so that it stays on top of all other elements */
+}
+pre {
+    line-height: 125%;
+    text-align: left !important;
+    padding: clamp(30px, 40px, 50px);
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-weight: 400;
+    position: relative;
+    border-radius: 0px;
+    background: rgb(40, 44, 52);
+    height: min-content;
+}
+button,
+.kbc-button {
+    font-family: var(--normalFont), sans-serif !important;
+    font-size: 2rem;
+}
+.copy-button {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-family: var(--normalFont);
+    cursor: pointer;
+    color: #fff;
+    background: gray;
+    border-radius: 0.5em;
+    padding: 2px 7px;
+}
+.codehilite:has(> pre),
+.highlight:has(> pre) {
+    border-radius: 48px;
+    border: 5px inset black;
+    padding: 30px;
+    background: rgb(40, 44, 52);
+    overflow-x: scroll;
+    margin: 0 auto;
+}
+.codehilite:has(> pre)::before,
+.highlight:has(> pre)::before {
+    content: "Code";
+    color: white;
+}
+code {
+    font-family: "Red Hat Mono", monospace;
+    font-optical-sizing: auto;
+    border-radius: 0px;
+}
+code:not(pre *) {
+    border-radius: 4px;
+    border: 0.1px white solid;
+}
+
+.copy-button:hover {
+    background: #0e2946;
+}
+
+td.linenos .normal {
+    color: inherit;
+    background-color: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+span.linenos {
+    color: inherit;
+    background-color: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+td.linenos .special {
+    color: #000000;
+    background-color: #ffffc0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+span.linenos.special {
+    color: #000000;
+    background-color: #ffffc0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.arithmatex,
+.img {
+    overflow-x: scroll;
+}
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+input[type="color"]::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+.skill-icon {
+    float: left;
+    position: absolute;
+    z-index: 9999;
+    border-radius: 0;
+}
+tr:nth-child(even),
+th {
+    background-color: #6fabab;
+}
+
+table,
+th,
+td {
+    border: 1px dashed white;
+    border-radius: 24px;
+    padding: 10px;
+    margin: 0 auto;
+    width: clamp(50px, 700px);
+} /*
+            table {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            th, td {
+                font-weight: 300;
+                width: clamp(150px, 300px);
+                text-wrap: balance;
+                margin: 0 clamp(2px, 10px);
+                line-height: 1.5;
+                padding: clamp(10px, 20px);
+                box-sizing: border-box;
+            }*/
+.hll {
+    background-color: #ffffcc;
+}
+.c {
+    color: #7f848e;
+} /* Comment */
+.err {
+    color: #abb2bf;
+} /* Error */
+.esc {
+    color: #abb2bf;
+} /* Escape */
+.g {
+    color: #abb2bf;
+} /* Generic */
+.k {
+    color: #c678dd;
+} /* Keyword */
+.l {
+    color: #abb2bf;
+} /* Literal */
+.n {
+    color: #e06c75;
+} /* Name */
+.o {
+    color: #56b6c2;
+} /* Operator */
+.x {
+    color: #abb2bf;
+} /* Other */
+.p {
+    color: #abb2bf;
+} /* Punctuation */
+.ch {
+    color: #7f848e;
+} /* Comment.Hashbang */
+.cm {
+    color: #7f848e;
+} /* Comment.Multiline */
+.cp {
+    color: #7f848e;
+} /* Comment.Preproc */
+.cpf {
+    color: #7f848e;
+} /* Comment.PreprocFile */
+.c1 {
+    color: #7f848e;
+} /* Comment.Single */
+.cs {
+    color: #7f848e;
+} /* Comment.Special */
+.gd {
+    color: #abb2bf;
+} /* Generic.Deleted */
+.ge {
+    color: #abb2bf;
+} /* Generic.Emph */
+.ges {
+    color: #abb2bf;
+} /* Generic.EmphStrong */
+.gr {
+    color: #abb2bf;
+} /* Generic.Error */
+.gh {
+    color: #abb2bf;
+} /* Generic.Heading */
+.gi {
+    color: #abb2bf;
+} /* Generic.Inserted */
+.go {
+    color: #abb2bf;
+} /* Generic.Output */
+.gp {
+    color: #abb2bf;
+} /* Generic.Prompt */
+.gs {
+    color: #abb2bf;
+} /* Generic.Strong */
+.gu {
+    color: #abb2bf;
+} /* Generic.Subheading */
+.gt {
+    color: #abb2bf;
+} /* Generic.Traceback */
+.kc {
+    color: #e5c07b;
+} /* Keyword.Constant */
+.kd {
+    color: #c678dd;
+} /* Keyword.Declaration */
+.kn {
+    color: #c678dd;
+} /* Keyword.Namespace */
+.kp {
+    color: #c678dd;
+} /* Keyword.Pseudo */
+.kr {
+    color: #c678dd;
+} /* Keyword.Reserved */
+.kt {
+    color: #e5c07b;
+} /* Keyword.Type */
+.ld {
+    color: #abb2bf;
+} /* Literal.Date */
+.m {
+    color: #d19a66;
+} /* Literal.Number */
+.s {
+    color: #98c379;
+} /* Literal.String */
+.na {
+    color: #e06c75;
+} /* Name.Attribute */
+.nb {
+    color: #e5c07b;
+} /* Name.Builtin */
+.nc {
+    color: #e5c07b;
+} /* Name.Class */
+.no {
+    color: #e06c75;
+} /* Name.Constant */
+.nd {
+    color: #61afef;
+} /* Name.Decorator */
+.ni {
+    color: #e06c75;
+} /* Name.Entity */
+.ne {
+    color: #e06c75;
+} /* Name.Exception */
+.nf {
+    color: #61afef;
+    font-weight: bold;
+} /* Name.Function */
+.nl {
+    color: #e06c75;
+} /* Name.Label */
+.nn {
+    color: #e06c75;
+} /* Name.Namespace */
+.nx {
+    color: #e06c75;
+} /* Name.Other */
+.py {
+    color: #e06c75;
+} /* Name.Property */
+.nt {
+    color: #e06c75;
+} /* Name.Tag */
+.nv {
+    color: #e06c75;
+} /* Name.Variable */
+.ow {
+    color: #56b6c2;
+} /* Operator.Word */
+.pm {
+    color: #abb2bf;
+} /* Punctuation.Marker */
+.w {
+    color: #abb2bf;
+} /* Text.Whitespace */
+.mb {
+    color: #d19a66;
+} /* Literal.Number.Bin */
+.mf {
+    color: #d19a66;
+} /* Literal.Number.Float */
+.mh {
+    color: #d19a66;
+} /* Literal.Number.Hex */
+.mi {
+    color: #d19a66;
+} /* Literal.Number.Integer */
+.mo {
+    color: #d19a66;
+} /* Literal.Number.Oct */
+.sa {
+    color: #98c379;
+} /* Literal.String.Affix */
+.sb {
+    color: #98c379;
+} /* Literal.String.Backtick */
+.sc {
+    color: #98c379;
+} /* Literal.String.Char */
+.dl {
+    color: #98c379;
+} /* Literal.String.Delimiter */
+.sd {
+    color: #98c379;
+} /* Literal.String.Doc */
+.s2 {
+    color: #98c379;
+} /* Literal.String.Double */
+.se {
+    color: #98c379;
+} /* Literal.String.Escape */
+.sh {
+    color: #98c379;
+} /* Literal.String.Heredoc */
+.si {
+    color: #98c379;
+} /* Literal.String.Interpol */
+.sx {
+    color: #98c379;
+} /* Literal.String.Other */
+.sr {
+    color: #98c379;
+} /* Literal.String.Regex */
+.s1 {
+    color: #98c379;
+} /* Literal.String.Single */
+.ss {
+    color: #98c379;
+} /* Literal.String.Symbol */
+.bp {
+    color: #e5c07b;
+} /* Name.Builtin.Pseudo */
+.fm {
+    color: #56b6c2;
+    font-weight: bold;
+} /* Name.Function.Magic */
+.vc {
+    color: #e06c75;
+} /* Name.Variable.Class */
+.vg {
+    color: #e06c75;
+} /* Name.Variable.Global */
+.vi {
+    color: #e06c75;
+} /* Name.Variable.Instance */
+.vm {
+    color: #e06c75;
+} /* Name.Variable.Magic */
+.il {
+    color: #d19a66;
+} /* Literal.Number.Integer.Long */
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
