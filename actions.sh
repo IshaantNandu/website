@@ -10,5 +10,6 @@ fi
 git commit -m "$commit_message"
 echo "✓ Commit successful with message: \"$commit_message\""
 git push -u origin main
+
 sudo systemctl restart website 
-sudo status restart website 
+sudo systemctl status website 
